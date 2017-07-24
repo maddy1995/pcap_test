@@ -1,7 +1,7 @@
-test: test.o
-	gcc -o test test.o -lpcap
+pcap: main.o
+	gcc -o pcap main.o-lpcap
 
-test.o: test1.c
-	gcc -c -o test.o test1.c -lpcap
+main.o: main.c 
+	gcc -c -o main.o main.c -lpcap
 
-clean: rm *.o test
+clean: rm *.o pcap
