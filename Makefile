@@ -1,3 +1,7 @@
-pcap: ./test1.o -1 "port 80"
-        gcc -c -o test1.o test1.c
+test: test.o
+	gcc -o test test.o -lpcap
 
+test.o: test1.c
+	gcc -c -o test.o test1.c -lpcap
+
+clean: rm *.o test
